@@ -2,6 +2,9 @@
 ## testing a pytorch model. They require torch and torch.utils.data
 ## to be installed.
 
+import torch
+from torch import nn
+
 def train_loop(model: torch.nn.Module,
                data_loader: torch.utils.data.DataLoader,
                loss_fn: torch.nn.Module,
