@@ -7,7 +7,7 @@ def train_loop(model: torch.nn.Module,
                loss_fn: torch.nn.Module,
                optimizer: torch.optim.Optimizer,
                accuracy_fn,
-               device: torch.device = device):
+               device = "None"):
     """
     Train loop for a given model, data loader, loss function, optimizer, and accuracy function.
 
@@ -57,7 +57,7 @@ def test_loop(data_loader: torch.utils.data.DataLoader,
               model: torch.nn.Module,
               loss_fn: torch.nn.Module,
               accuracy_fn,
-              device: torch.device = device):
+              device = "None"):
     """
     Test loop for a given model, data loader, loss function, and accuracy function.
 
