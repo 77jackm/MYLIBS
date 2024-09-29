@@ -128,7 +128,7 @@ def eval_model(data_loader: torch.utils.data.DataLoader,
             X, y = X.to(device), y.to(device)
 
             # 1.Forward Pass
-            y_pred = Model(X)
+            y_pred = model(X)
 
             # 2. Calculate loss and accuracy
             loss += loss_fn(y_pred, y)
