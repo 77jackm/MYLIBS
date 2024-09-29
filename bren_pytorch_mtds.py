@@ -104,9 +104,23 @@ def test_loop(data_loader: torch.utils.data.DataLoader,
 
 def eval_model(model: torch.nn,Module,
                data_loader: torch.utils.data.DataLoader,
-               loss_fn = loss_fn,
-               accuracy_fn = accuracy_fn,
-               device = device):
+               loss_fn = torch.nn.Module,
+               accuracy_fn,
+               device = "None"):
+    
+    """
+    Evaluate a model on a given data loader.
+
+    Args:
+        model (torch.nn.Module): The model to evaluate
+        data_loader (torch.utils.data.DataLoader): The data loader to use
+        loss_fn (torch.nn.Module, optional): The loss function to use. Defaults to torch.nn.Module.
+        accuracy_fn: The accuracy function to use
+        device (torch.device, optional): The device to use. Defaults to the device the model is on.
+
+    Returns:
+        A dictionary containing the model name, loss, and accuracy.
+    """
     loss, acc = 0, 0
     model.eval()
     with torch.inference_mode():
