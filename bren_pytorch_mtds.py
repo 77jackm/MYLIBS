@@ -103,10 +103,10 @@ def test_loop(data_loader: torch.utils.data.DataLoader,
 
 
 def eval_model(data_loader: torch.utils.data.DataLoader,
-              model: torch.nn.Module,
-              loss_fn: torch.nn.Module,
-              accuracy_fn,
-              device = "None"):
+                model: torch.nn.Module,
+                loss_fn: torch.nn.Module,
+                accuracy_fn,
+                device = "None"):
     """
     Evaluate a model on a given data loader.
 
@@ -139,6 +139,6 @@ def eval_model(data_loader: torch.utils.data.DataLoader,
             loss /= len(data_loader)
             acc /= len(data_loader)
     
-    return{"model_name": model.class_name__,
+    return{"model_name": model.__class__.__name__,
            "model_loss": loss.item(),
            "model_acc": acc}
