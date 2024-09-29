@@ -102,12 +102,11 @@ def test_loop(data_loader: torch.utils.data.DataLoader,
         print(f"Test loss: {test_loss:.5f} | Test accuracy: {test_acc:.2f}%\n")
 
 
-def eval_model(model: torch.nn,Module,
-               data_loader: torch.utils.data.DataLoader,
-               loss_fn = torch.nn.Module,
-               accuracy_fn,
-               device = "None"):
-    
+def eval_model(data_loader: torch.utils.data.DataLoader,
+              model: torch.nn.Module,
+              loss_fn: torch.nn.Module,
+              accuracy_fn,
+              device = "None"):
     """
     Evaluate a model on a given data loader.
 
